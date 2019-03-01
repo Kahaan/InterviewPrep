@@ -1,7 +1,7 @@
 function reverse(arrayOfChars) {
   let i = 1;
   let length = arrayOfChars.length;
-
+  // length is required since arrayOfChars is being modified
   while (i < length) {
     currChar = arrayOfChars.splice(i, 1);
     arrayOfChars.unshift(...currChar);
@@ -18,6 +18,7 @@ function reverse(arrayOfChars) {
 function reverse(arrayOfChars) {
   let leftIndex = 0;
   let rightIndex = arrayOfChars.length - 1;
+  // Both left and right index are outside the loop to ensure they don't change
 
   while (leftIndex < rightIndex) {
     // Swap characters
