@@ -12,3 +12,21 @@ function reverse(arrayOfChars) {
 
 // TODO:  Since unshift is O(n) and is within the loop, and the loop is a different length than the arrayOfChars,
 // Check if the problem is O(ab) or O(n^2)
+
+// MORE OPTIMAL SOLUTION:
+
+function reverse(arrayOfChars) {
+  let leftIndex = 0;
+  let rightIndex = arrayOfChars.length - 1;
+
+  while (leftIndex < rightIndex) {
+    // Swap characters
+    const temp = arrayOfChars[leftIndex];
+    arrayOfChars[leftIndex] = arrayOfChars[rightIndex];
+    arrayOfChars[rightIndex] = temp;
+
+    // Move towards middle
+    leftIndex++;
+    rightIndex--;
+  }
+}
