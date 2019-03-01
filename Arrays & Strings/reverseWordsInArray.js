@@ -1,3 +1,5 @@
+// DO AGAIN
+
 function reverseOrder(arrayOfChars) {
   let leftIndex = 0;
   let rightIndex = arrayOfChars.length - 1;
