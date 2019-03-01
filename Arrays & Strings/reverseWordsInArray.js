@@ -1,4 +1,4 @@
-function reverse(arrayOfChars) {
+function reverseOrder(arrayOfChars) {
   let leftIndex = 0;
   let rightIndex = arrayOfChars.length - 1;
   // Both left and right index are outside the loop to ensure they don't change
@@ -13,10 +13,11 @@ function reverse(arrayOfChars) {
     leftIndex++;
     rightIndex--;
   }
+  return arrayOfChars;
 }
 
 function reverseWords(message) {
   message = message.join("");
   let words = message.split(" ");
-  words.forEach(word => reverse(word.split("")));
+  words = reverseOrder(words);
 }
