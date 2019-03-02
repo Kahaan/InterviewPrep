@@ -11,6 +11,13 @@ function hasPalindromePermutation(theString) {
   return false;
 }
 
+// By using a hash we are able to create a count of the number of characters in the string
+// Just by knowing the count of the number of even and odd chars we can tell whether or not
+// it is possible to have a palindrome since a palindrome requires equal chars on each side and
+// can accomodate one single char with an odd count.
+// Therefore by reducing the problem to what is absolutely required
+// we are able to avoid writing a nested loop with quadratic time complexity
+
 // Better solution
 
 function hasPalindromePermutation(theString) {
