@@ -17,7 +17,16 @@ class BinaryTreeNode {
 }
 
 function isBalanced(treeRoot) {
-  // Determine if the tree is superbalanced
+  let maxLeft = 0;
+  let maxRight = 0;
 
-  return false;
+  while (ths.left) {
+    maxLeft += 1;
+  }
+
+  while (ths.right) {
+    maxRight += 1;
+  }
+
+  if (maxLeft - maxRight > 1) return false;
 }
