@@ -1,23 +1,25 @@
 class MaxStack {
   constructor() {
-    this.items = [];
+    this.stack = new Stack();
+    this.maxesStack = new Stack();
   }
 
   push(item) {
-    this.items.push(item);
+    this.stack.push(item);
+    if (this.maxesStack.peek() === null || item >= this.maxesStack.peek()) {
+      this.maxesStack.push(item);
+    }
   }
 
   pop() {
-    if (!this.items.length) {
-      return null;
+    const item = this.stack.pop();
+    if (item === this.maxesStack.peek()) {
+      this.maxesStack.pop();
     }
-    return this.items.pop();
+    return item;
   }
 
   getMax() {
-    if (!this.items.length) {
-      return null;
-    }
-    return Math.max(...this.items);
+    return this.maxesStack.peek();
   }
 }
