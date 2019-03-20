@@ -12,11 +12,9 @@ function bubbleSort(array) {
       array[i] = second;
       array[j] = first;
       sorted = false;
-      console.log(array, i, j);
     }
     i++;
     j = i + 1;
   }
-  // Write your code here.
   return array;
 }
