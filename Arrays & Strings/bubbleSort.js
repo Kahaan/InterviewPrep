@@ -1,20 +1,22 @@
 function bubbleSort(array) {
-  let sorted = false;
-  let i = 0;
+  let isSorted = false;
+  let counter = 0;
 
-  while (!sorted) {
-    let j = i + 1;
-    sorted = true;
-    let first = array[i];
-    let second = array[j];
-
-    if (first > second) {
-      array[i] = second;
-      array[j] = first;
-      sorted = false;
+  while (!isSorted) {
+    isSorted = true;
+    for (let i = 0; i < array.length - 1 - counter; i++) {
+      if (array[i] > array[i + 1]) {
+        swap(i, i + 1, array);
+        isSorted = false;
+      }
     }
-    i++;
-    j = i + 1;
+    counter++;
   }
   return array;
+}
+
+function swap(i, j, array) {
+  let temp = array[j];
+  array[j] = array[i];
+  array[i] = temp;
 }
