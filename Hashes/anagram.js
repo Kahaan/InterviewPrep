@@ -2,6 +2,8 @@ const validAnagram = (word, word2) => {
   let wordObj = {};
   let word2Obj = {};
 
+  if (word.length !== word2.length) return false;
+
   for (let char of word.split("")) {
     wordObj[char] = (wordObj[char] || 0) + 1;
   }
