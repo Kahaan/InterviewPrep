@@ -2,14 +2,14 @@ function twoSum(arr, t) {
   let left = 0;
   let right = arr.length - 1;
   while (left < right) {
-    let sum = arr[right] + arr[left];
+    let sum = arr[left] + arr[right];
     if (sum === t) {
-      return [arr[right], arr[left]];
+      return [arr[left], arr[right]];
     } else if (sum > t) {
-      left--;
+      right--;
     } else {
-      right++;
+      left++;
     }
   }
-  return [];
+  return false;
 }
