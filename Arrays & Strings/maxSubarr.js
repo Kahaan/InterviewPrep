@@ -4,8 +4,8 @@ function maxSubarr(arr, n) {
     maxSum += arr[i];
   }
   let tempSum = maxSum;
-  for (let i = num; i < arr.length; i++) {
-    tempSum -= arr[i - num] + arr[i];
+  for (let i = n; i < arr.length; i++) {
+    tempSum = tempSum - arr[i - n] + arr[i];
     maxSum = Math.max(maxSum, tempSum);
   }
   return maxSum;
