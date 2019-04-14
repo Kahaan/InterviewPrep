@@ -13,3 +13,6 @@ function twoSum(arr, t) {
   }
   return false;
 }
+// Only works if arr is sorted, else it's O(nlog n)
+// This is a multiple pointer pattern, allows you to check several different values
+// helpful if you have some way of predicting pattern in the input array
