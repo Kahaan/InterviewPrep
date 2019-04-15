@@ -10,3 +10,5 @@ function maxSubarr(arr, n) {
   }
   return maxSum;
 }
+
+// Any problem that requires some computation of consecutive subArr can likely match this pattern
