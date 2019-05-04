@@ -1,5 +1,6 @@
 function pairsWithSpecificDiff(arr, k) {
   if (k == 0) return [];
+  // since all elements are unique no two can sum to 0
 
   let differences = {};
 
