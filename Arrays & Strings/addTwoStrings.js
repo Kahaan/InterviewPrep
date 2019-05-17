@@ -1,4 +1,4 @@
-function sumOfStrings(num1, num2) {
+function sumOfBigStrings(num1, num2) {
   let num1Idx = num1.length - 1;
   let num2Idx = num2.length - 1;
   let remainder = 0;
@@ -16,16 +16,34 @@ function sumOfStrings(num1, num2) {
   return sum;
 }
 
-function strSum(num1, num2) {
-  let num1Whole = num1.slice(0, num1.indexOf("."));
-  let num2Whole = num2.slice(0, num2.indexOf("."));
-  let wholeSum = sumOfStrings(num1Whole, num2Whole);
+function sumOfStrings(num1, num2) {
+  let num1Whole = 0;
+  let num2Whole = 0;
+  let num1Decimal = 0;
+  let num2Decimal = 0;
 
-  let num1Decimal = num1.slice(num1.indexOf(".") + 1);
-  let num2Decimal = num2.slice(num2.indexOf(".") + 1);
+  if (num1.includes(".")) {
+    let num1Parts = num1.split(".");
+    num1Whole = num1Parts[0] - "0";
+    num1Decimal = "." + num1Parts[1] - "0";
+  } else {
+    num1Whole = num1 - "0";
+  }
 
-  let smaller = num1Decimal.length < num2num2Decimal.length ? num1 : num2;
+  if (num2.includes(".")) {
+    let num2Parts = num2.split(".");
+    num2Whole = num2Parts[0] - "0";
+    num2Decimal = "." + num2Parts[1] - "0";
+  } else {
+    num2Whole = num2 - "0";
+  }
 
-  // subtract from '0' for both num prior to decimal and after
-  // return sum
+  let sum = num1Whole + num1Decimal + num2Whole + num2Decimal;
+
+  return sum.toFixed(2).toString();
 }
+
+sumOfStrings(
+  "100000000000000000000000000000001",
+  "100000000000000000000000000000002"
+);
