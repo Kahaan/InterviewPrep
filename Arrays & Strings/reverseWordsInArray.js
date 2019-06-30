@@ -3,7 +3,7 @@
 function reverseOrder(arrayOfChars) {
   let leftIndex = 0;
   let rightIndex = arrayOfChars.length - 1;
-  // Both left and right index are outside the loop to ensure they don't change
+  // Both left and right index are outside the loop to ensure they change
 
   while (leftIndex < rightIndex) {
     // Swap characters
